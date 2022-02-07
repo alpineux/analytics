@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { FormattedMessage } from 'react-intl';
 import { Formik, Form, Field } from 'formik';
 import { useRouter } from 'next/router';
@@ -9,8 +10,7 @@ import FormLayout, {
   FormMessage,
   FormRow,
 } from 'components/layout/FormLayout';
-import Icon from 'components/common/Icon';
-import Logo from 'assets/logo.svg';
+import Logo from 'public/alpine-logo2.png';
 import styles from './LoginForm.module.css';
 import usePost from 'hooks/usePost';
 
@@ -67,24 +67,24 @@ export default function LoginForm() {
         {() => (
           <Form>
             <div className={styles.header}>
-              <Icon icon={<Logo />} size="xlarge" className={styles.icon} />
-              <h1 className="center">umami</h1>
+              {/*<Icon icon={<Logo />} size="xlarge" className={styles.icon} />*/}
+              <span className={styles.icon}>
+                <Image src={Logo} width="100px" height="100px" alt="alpineUX logo" />
+              </span>
+              <h1 className="center">alpineUX</h1>
+              <h2 style={{ fontFamily: 'HelveticaNeue' }} className="center">
+                analytics
+              </h2>
             </div>
             <FormRow>
-              <label htmlFor="username">
-                <FormattedMessage id="label.username" defaultMessage="Username" />
-              </label>
               <div>
-                <Field name="username" type="text" />
+                <Field name="username" type="text" placeholder="Username" />
                 <FormError name="username" />
               </div>
             </FormRow>
             <FormRow>
-              <label htmlFor="password">
-                <FormattedMessage id="label.password" defaultMessage="Password" />
-              </label>
               <div>
-                <Field name="password" type="password" />
+                <Field name="password" type="password" placeholder="Password" />
                 <FormError name="password" />
               </div>
             </FormRow>
