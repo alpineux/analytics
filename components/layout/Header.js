@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 import Link from 'components/common/Link';
-import Icon from 'components/common/Icon';
 import LanguageButton from 'components/settings/LanguageButton';
 import ThemeButton from 'components/settings/ThemeButton';
 import UpdateNotice from 'components/common/UpdateNotice';
 import UserButton from 'components/settings/UserButton';
 import Button from 'components/common/Button';
-import Logo from 'assets/logo.svg';
+import Logo from 'public/alpine-logo.png';
 import styles from './Header.module.css';
 import useLocale from 'hooks/useLocale';
 import XMark from 'assets/xmark.svg';
@@ -31,8 +31,11 @@ export default function Header() {
         <div className={styles.nav}>
           <div className="">
             <div className={styles.title}>
-              <Icon icon={<Logo />} size="large" className={styles.logo} />
-              <Link href={user ? '/' : 'https://umami.is'}>analytics</Link>
+              {/*<Icon icon={<Logo />} size="large" className={styles.logo} />*/}
+              <Image src={Logo} width="32px" height="32px" alt="AlpineUX logo" />
+              <span style={{ marginLeft: '8px' }}>
+                <Link href={user ? '/' : 'https://alpineux.com'}>analytics</Link>
+              </span>
             </div>
           </div>
           <Button
