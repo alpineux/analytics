@@ -1,8 +1,21 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url('fonts/HelveticaNeue.ttf');
+}
+
+@font-face {
+  font-family: HelveticaNeue Thin;
+  src: url('fonts/HelveticaNeue Thin.ttf');
+}
+
+@font-face {
+  font-family: HelveticaNeue Light;
+  src: url('fonts/HelveticaNeue Light.ttf');
+}
+
 html,
 body {
-  font-family: Inter, -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
-    Ubuntu, Cantrell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  font-family: 'HelveticaNeue Light', sans-serif;
   font-weight: 400;
   line-height: 1.8;
   padding: 0;
@@ -50,11 +63,6 @@ body {
 .he-IL {
   font-family: 'New Peninim MT', 'Arial Hebrew', Gisha, 'Times New Roman', Roboto, Noto,
     'Noto Sans Hebrew', sans-serif !important;
-}
-
-.he-IL {
-  display: inline-block;
-  direction: rtl;
 }
 
 *,
